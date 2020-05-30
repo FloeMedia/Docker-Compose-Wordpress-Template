@@ -20,8 +20,8 @@ services:
        - "8000:80"
      volumes:
        - ./data/wordpress:/var/www/html
-#      - ./my-theme:/var/www/html/wp-content/themes/my-theme
-#      - ./my-plugin:/var/www/html/wp-content/plugins/my-plugin
+       #- ./my-theme:/var/www/html/wp-content/themes/my-theme
+       #- ./my-plugin:/var/www/html/wp-content/plugins/my-plugin
      restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306
