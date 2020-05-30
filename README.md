@@ -41,3 +41,20 @@ env DB_NAME=wordpress \
 ```
 
 Adjust all above values to be secure. Use a password generator.
+
+## cli.sh
+
+A script called `cli.sh` is added to help you manage your Wordpress installation with ease.
+
+```
+Not enough arguments.
+
+Database Utilities:
+	* ./cli.sh db_b [database]            - Creates a backup of the database "database" and saves it as "filename"
+	* ./cli.sh db_i [database] [filename] - Imports "filename" to database "database"
+
+File Utilities:
+	* ./cli.sh f_b                        - Creates a backup of the files in backups/ directory
+	* ./cli.sh f_i [archive]             - Imports an archive created with this script. Creates a backup first for safety
+	* ./cli.sh f_p                        - Fixes file permissions
+```
