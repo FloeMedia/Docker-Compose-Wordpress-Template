@@ -5,7 +5,7 @@ services:
      image: mysql:5.7
      volumes:
        - ./data/mysql:/var/lib/mysql
-     restart: always
+     restart: ${RESTART_POLICY}
      environment:
        MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
        MYSQL_DATABASE: ${DB_NAME}
@@ -20,9 +20,9 @@ services:
        - "8000:80"
      volumes:
        - ./data/wordpress:/var/www/html
-       #- ./my-theme:/var/www/html/wp-content/themes/my-theme
+       - ./floemedia_theme:/var/www/html/wp-content/themes/floemedia_theme
        #- ./my-plugin:/var/www/html/wp-content/plugins/my-plugin
-     restart: always
+     restart: ${RESTART_POLICY}
      environment:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: ${DB_USER}

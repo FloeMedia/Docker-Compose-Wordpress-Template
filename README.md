@@ -33,7 +33,8 @@ So, the the biggest consideration for production use is changing the credentials
 A better solution is to override the environmental variables set in that file by...setting environmental variables. `docker-compose up` like this.
 
 ```bash
-env DB_NAME=wordpress \
+env RESTART_POLICY=always \
+    DB_NAME=wordpress \
     DB_USER=wordpress \
     DB_PASSWORD=wordpress \
     DB_ROOT_PASSWORD=worpdress \
